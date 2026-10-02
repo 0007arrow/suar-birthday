@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Bacchi ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="main-bg"></div>
+    <div class="sparkles-container" id="sparkles"></div>
+    <div id="music-toggle" class="music-btn">♫</div>
+    <audio id="bg-music" loop>
+        <source src="assets/birthday-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="app">
+        <!-- Section 1: Opening -->
+        <section id="s1-opening" class="screen active">
+            <div class="particles" id="particles-1"></div>
+            <div class="content fade-in">
+                <h1 class="greeting">Hey Bacchi... 👀❤️</h1>
+                <p class="subtitle delay-1">I have something very important to ask you...</p>
+                <div class="question-container delay-2">
+                    <h2 class="main-question">Do you love me? ❤️</h2>
+                    <div class="buttons">
+                        <button id="btn-yes" class="btn primary-btn">YES ❤️</button>
+                        <button id="btn-no" class="btn secondary-btn">NO 😏</button>
+                    </div>
+                    <p id="no-text" class="hidden cute-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Celebration -->
+        <section id="s2-celebration" class="screen hidden">
+            <div class="content fade-in">
+                <h1 class="celebration-text">I KNEW IT! 😭❤️</h1>
+                <p class="subtitle delay-1">Come here, Bacchi...</p>
+                <p class="subtitle delay-2">But that's not the surprise.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Photo Reveal -->
+        <section id="s3-photo-reveal" class="screen hidden">
+            <div class="content fade-in">
+                <div class="photo-frame cinematic-reveal">
+                    <img id="reveal-photo" src="assets/photo1.jpg" alt="Bacchi">
+                </div>
+                <h2 class="cute-text delay-1">Look at my Bacchi... 🥹❤️</h2>
+                <p class="subtitle delay-2">Today is all about you.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Birthday Reveal -->
+        <section id="s4-birthday-reveal" class="screen hidden">
+            <div class="content fade-in">
+                <h1 class="birthday-title delay-1">Happy Birthday, <span class="name-highlight">Love</span> 🎂❤️</h1>
+                <h3 class="date-text delay-2">29th Nov</h3>
+                <p class="subtitle delay-3">Today is the day the person who means so much to me was born.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Cake Experience -->
+        <section id="s5-cake" class="screen hidden">
+            <div class="content fade-in">
+                <p class="subtitle">Okay Bacchi...</p>
+                <p class="subtitle delay-1">Your cake is ready. 🎂</p>
+                
+                <div class="cake-container delay-2">
+                    <div class="cake">
+                        <div class="plate"></div>
+                        <div class="layer layer-bottom"></div>
+                        <div class="layer layer-middle"></div>
+                        <div class="layer layer-top"></div>
+                        <div class="icing"></div>
+                        <div class="drip drip1"></div>
+                        <div class="drip drip2"></div>
+                        <div class="drip drip3"></div>
+                        <div class="candle">
+                            <div class="flame" id="flame"></div>
+                            <div class="smoke" id="smoke"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="wish-prompt" class="subtitle delay-3">Make a wish...</p>
+                <h1 id="countdown" class="countdown-text hidden">3</h1>
+                <p id="post-wish-text" class="hidden cute-text">Happy Birthday, Bacchi! ❤️<br><span style="font-size: 0.7em; opacity: 0.8">Now close your eyes...<br>Make your wish. ✨</span></p>
+            </div>
+        </section>
+
+        <!-- Section 6: Romantic Wishes -->
+        <section id="s6-wishes" class="screen hidden">
+            <div class="content">
+                <h2 class="fade-in">My wish for you...</h2>
+                <div id="wishes-list" class="wishes-list">
+                    <!-- Added by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Scrapbook -->
+        <section id="s7-scrapbook" class="screen hidden">
+            <div class="content fade-in">
+                <div class="scrapbook">
+                    <div class="polaroid p1">
+                        <img id="sb-photo1" src="assets/photo1.jpg" alt="Memory 1">
+                        <p class="caption">One of my favorite views ❤️</p>
+                    </div>
+                    <div class="polaroid p2">
+                        <img id="sb-photo2" src="assets/photo2.jpg" alt="Memory 2">
+                        <p class="caption">That smile... 🥹</p>
+                    </div>
+                    <div class="polaroid p3">
+                        <img id="sb-photo3" src="assets/photo3.jpg" alt="Memory 3">
+                        <p class="caption">My favorite Bacchi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Why You Are Special -->
+        <section id="s8-special" class="screen hidden">
+            <div class="content">
+                <h2 class="fade-in">Do you know why you're so special to me?</h2>
+                <div id="reasons-container" class="reasons">
+                    <!-- Added by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Letter -->
+        <section id="s9-letter" class="screen hidden">
+            <div class="content fade-in">
+                <h2>A little letter for my Bacchi 💌</h2>
+                <div class="envelope-container" id="envelope">
+                    <div class="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter">
+                            <div class="letter-content" id="letter-text">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="hint-text">(Tap to open)</p>
+            </div>
+        </section>
+
+        <!-- Section 10: Message -->
+        <section id="s10-message" class="screen hidden">
+            <div class="content fade-in glass-panel">
+                <h2>Okay Bacchi... now it's your turn 👀❤️</h2>
+                <p class="subtitle">I made this whole little world for you...</p>
+                <p class="subtitle">Now leave something for me.</p>
+                <div class="input-container delay-2">
+                    <textarea id="user-message" placeholder="Write something for Sharib... ❤️" rows="4"></textarea>
+                    <button id="btn-send" class="btn primary-btn">Send it to Sharib 💌</button>
+                </div>
+                <p id="send-response" class="hidden cute-text">I'll keep this little message forever. 🥹❤️</p>
+            </div>
+        </section>
+
+        <!-- Section 11: Final -->
+        <section id="s11-final" class="screen hidden final-bg">
+            <div class="particles" id="particles-final"></div>
+            <div class="content fade-in">
+                <h1 class="birthday-title delay-1">Happy Birthday, Love ❤️</h1>
+                <h2 class="from-text delay-2">From Sharib</h2>
+                <h2 class="to-text delay-3">To my Bacchi.</h2>
+                <p class="subtitle delay-4" style="margin-top: 40px;">I hope this little surprise made you smile.</p>
+                <p class="subtitle delay-5">Because your smile is one of my favorite things in the world. ❤️</p>
+                <h1 class="birthday-title delay-6" style="margin-top: 40px; font-size: 2.5rem;">Happy Birthday, Bacchi. 🎂❤️</h1>
+                <p class="date-text small delay-6">29 • Nov</p>
+                <div class="heart-pulse delay-6">❤️</div>
+                
+                <button id="btn-replay" class="btn ghost-btn delay-6" style="margin-top: 50px;">Experience it again ↻</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
