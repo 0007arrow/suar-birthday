@@ -6,9 +6,9 @@ const birthdayConfig = {
     creator: "Sharib",
     
     // Replace these paths with your actual photo paths in the assets folder
-    photo1: "assets/WhatsApp Image 2026-10-02 at 9.28.25 PM.jpeg", 
-    photo2: "assets/WhatsApp Image 2026-10-02 at 9.28.26 PM.jpeg",
-    photo3: "assets/WhatsApp Image 2026-10-02 at 9.28.26 PM (1).jpeg",
+    photo1: "assets/WhatsApp Image 2026-10-02 at 9.28.25 PM.jpg", 
+    photo2: "assets/WhatsApp Image 2026-10-02 at 9.28.26 PM.jpg",
+    photo3: "assets/WhatsApp Image 2026-10-02 at 9.28.26 PM (1).jpg",
     
     // Love letter content (HTML allowed for line breaks)
     letter: `
