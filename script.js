@@ -2,7 +2,7 @@
 const birthdayConfig = {
     name: "Love",
     nickname: "Bacchi",
-    birthday: "29 Nov",
+    birthday: "9 July",
     creator: "Sharib",
     
     // Replace these paths with your actual photo paths in the assets folder
